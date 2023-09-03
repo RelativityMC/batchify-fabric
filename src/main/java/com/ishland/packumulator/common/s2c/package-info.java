@@ -1,0 +1,1 @@
+package com.ishland.packumulator.common.s2c;
