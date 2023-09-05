@@ -1,6 +1,7 @@
 package com.ishland.packumulator.common.s2c.chunkupdate;
 
 import com.ishland.packumulator.common.PacketWrapper;
+import com.ishland.packumulator.common.s2c.sync.SynchronizationLayer;
 import com.ishland.packumulator.common.structs.DynamicPriorityQueue;
 import com.ishland.packumulator.mixin.access.IChunkDeltaUpdateS2CPacket;
 import io.netty.channel.ChannelDuplexHandler;
@@ -29,7 +30,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.ChunkSectionPos;
 import net.minecraft.util.math.MathHelper;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -181,12 +181,24 @@ public class ChunkUpdateConsolidator extends ChannelDuplexHandler {
     }
 
     @Override
+    public void userEventTriggered(ChannelHandlerContext ctx, Object evt) throws Exception {
+        if (evt == SynchronizationLayer.SYNC_REQUEST_OBJECT_DIM_CHANGE) {
+            System.out.println("Discarding %d waiting chunks".formatted(this.priorityQueue.size()));
+            this.packetsInProgress.set(0);
+            this.priorityQueue.clear();
+            this.chunks.clear();
+        }
+        ctx.fireUserEventTriggered(evt);
+    }
+
+    @Override
     public void handlerRemoved(ChannelHandlerContext ctx) throws Exception {
         super.handlerRemoved(ctx);
         this.sendPackets(ctx, true);
     }
 
     private void sendPackets(ChannelHandlerContext ctx, boolean ignoreWritability) {
+        if (!ctx.channel().isOpen() || ctx.isRemoved()) return;
         ChunkPendingChanges changes;
         int burst = 0;
         while ((ignoreWritability || (burst ++ < MAX_CONCURRENT_PACKETS && this.isWritableToChannel(ctx))) && (changes = this.priorityQueue.peek()) != null) {

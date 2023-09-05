@@ -90,6 +90,14 @@ public class DynamicPriorityQueue<E> {
         priorityMap.removeInt(element);
     }
 
+    public void clear() {
+        for (ObjectLinkedOpenHashSet<E> set : priorities) {
+            set.clear();
+        }
+        priorityMap.clear();
+        currentMinPriority = 0;
+    }
+
     public int size() {
         return priorityMap.size();
     }

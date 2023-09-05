@@ -1,6 +1,8 @@
 package com.ishland.packumulator.mixin;
 
 import com.ishland.packumulator.common.s2c.chunkupdate.ChunkUpdateConsolidator;
+import com.ishland.packumulator.common.s2c.sync.SynchronizationLayer;
+import com.ishland.packumulator.common.test.LatencyOnPurpose;
 import io.netty.channel.ChannelPipeline;
 import io.netty.handler.flush.FlushConsolidationHandler;
 import net.minecraft.network.ClientConnection;
@@ -15,7 +17,9 @@ public class MixinClientConnection {
 
     @Inject(method = "addHandlers", at = @At("RETURN"))
     private static void onAddHandlers(ChannelPipeline pipeline, NetworkSide side, CallbackInfo ci) {
+//        pipeline.addLast("LatencyOnPurpose", new LatencyOnPurpose(100L));
         pipeline.addLast("ChunkUpdateConsolidator", new ChunkUpdateConsolidator());
+        pipeline.addLast("SynchronizationLayer", new SynchronizationLayer());
         pipeline.addLast(new FlushConsolidationHandler());
     }
 
