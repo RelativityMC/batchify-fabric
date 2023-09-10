@@ -1,4 +1,4 @@
-package com.ishland.packumulator.common.test;
+package com.ishland.batchify.common.test;
 
 import io.netty.channel.ChannelDuplexHandler;
 import io.netty.channel.ChannelHandlerContext;

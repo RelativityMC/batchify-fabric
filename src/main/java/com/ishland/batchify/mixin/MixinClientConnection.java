@@ -1,8 +1,7 @@
-package com.ishland.packumulator.mixin;
+package com.ishland.batchify.mixin;
 
-import com.ishland.packumulator.common.s2c.chunkupdate.ChunkUpdateConsolidator;
-import com.ishland.packumulator.common.s2c.sync.SynchronizationLayer;
-import com.ishland.packumulator.common.test.LatencyOnPurpose;
+import com.ishland.batchify.common.s2c.chunkupdate.ChunkUpdateConsolidator;
+import com.ishland.batchify.common.s2c.sync.SynchronizationLayer;
 import io.netty.channel.ChannelPipeline;
 import io.netty.handler.flush.FlushConsolidationHandler;
 import net.minecraft.network.ClientConnection;

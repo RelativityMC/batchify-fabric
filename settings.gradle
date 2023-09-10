@@ -9,5 +9,5 @@ pluginManagement {
 	}
 }
 
-rootProject.name = "packumulator" // avoid weirdness when building the project using another directory name
+rootProject.name = "batchify" // avoid weirdness when building the project using another directory name
 

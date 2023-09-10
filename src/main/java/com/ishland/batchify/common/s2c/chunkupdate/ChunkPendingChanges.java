@@ -1,12 +1,10 @@
-package com.ishland.packumulator.common.s2c.chunkupdate;
+package com.ishland.batchify.common.s2c.chunkupdate;
 
-import com.ishland.packumulator.common.PacketWrapper;
-import com.ishland.packumulator.common.s2c.FutureUtil;
-import com.ishland.packumulator.mixin.access.IChunkDeltaUpdateS2CPacket;
+import com.ishland.batchify.common.PacketWrapper;
+import com.ishland.batchify.common.s2c.FutureUtil;
+import com.ishland.batchify.mixin.access.IChunkDeltaUpdateS2CPacket;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelPromise;
-import io.netty.util.concurrent.Future;
-import io.netty.util.concurrent.PromiseCombiner;
 import it.unimi.dsi.fastutil.ints.Int2ReferenceLinkedOpenHashMap;
 import it.unimi.dsi.fastutil.longs.Long2ReferenceLinkedOpenHashMap;
 import it.unimi.dsi.fastutil.objects.ObjectArrayFIFOQueue;
@@ -16,7 +14,6 @@ import it.unimi.dsi.fastutil.shorts.ShortSet;
 import net.minecraft.block.BlockState;
 import net.minecraft.network.packet.Packet;
 import net.minecraft.network.packet.s2c.play.BlockEntityUpdateS2CPacket;
-import net.minecraft.network.packet.s2c.play.BlockUpdateS2CPacket;
 import net.minecraft.network.packet.s2c.play.ChunkData;
 import net.minecraft.network.packet.s2c.play.ChunkDataS2CPacket;
 import net.minecraft.network.packet.s2c.play.ChunkDeltaUpdateS2CPacket;

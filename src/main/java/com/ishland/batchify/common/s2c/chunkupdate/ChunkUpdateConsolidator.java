@@ -1,9 +1,9 @@
-package com.ishland.packumulator.common.s2c.chunkupdate;
+package com.ishland.batchify.common.s2c.chunkupdate;
 
-import com.ishland.packumulator.common.PacketWrapper;
-import com.ishland.packumulator.common.s2c.sync.SynchronizationLayer;
-import com.ishland.packumulator.common.structs.DynamicPriorityQueue;
-import com.ishland.packumulator.mixin.access.IChunkDeltaUpdateS2CPacket;
+import com.ishland.batchify.common.PacketWrapper;
+import com.ishland.batchify.common.s2c.sync.SynchronizationLayer;
+import com.ishland.batchify.common.structs.DynamicPriorityQueue;
+import com.ishland.batchify.mixin.access.IChunkDeltaUpdateS2CPacket;
 import io.netty.channel.ChannelDuplexHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelPromise;

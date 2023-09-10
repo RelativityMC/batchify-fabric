@@ -1,0 +1,1 @@
+package com.ishland.batchify.common.s2c;

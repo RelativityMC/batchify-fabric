@@ -1,4 +1,4 @@
-package com.ishland.packumulator.common.structs;
+package com.ishland.batchify.common.structs;
 
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;

@@ -1,4 +1,4 @@
-package com.ishland.packumulator.mixin.access;
+package com.ishland.batchify.mixin.access;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.network.packet.s2c.play.ChunkDeltaUpdateS2CPacket;

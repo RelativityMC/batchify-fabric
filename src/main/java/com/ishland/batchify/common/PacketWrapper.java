@@ -1,4 +1,4 @@
-package com.ishland.packumulator.common;
+package com.ishland.batchify.common;
 
 import io.netty.channel.ChannelPromise;
 

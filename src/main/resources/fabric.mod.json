@@ -1,24 +1,24 @@
 {
 	"schemaVersion": 1,
-	"id": "packumulator",
+	"id": "batchify",
 	"version": "${version}",
-	"name": "Packumulator",
-	"description": "",
+	"name": "Batchify",
+	"description": "A server-side mod designed to improve multiplayer experience for players with bad connections.",
 	"authors": [
 		"ishland"
 	],
 	"contact": {
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"sources": "https://github.com/RelativityMC/batchify-fabric"
 	},
 	"license": "MIT",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"com.ishland.packumulator.TheMod"
+			"com.ishland.batchify.TheMod"
 		]
 	},
 	"mixins": [
-		"packumulator.mixins.json"
+		"batchify.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.14.21",

@@ -1,4 +1,4 @@
-package com.ishland.packumulator;
+package com.ishland.batchify;
 
 import net.fabricmc.api.ModInitializer;
 

@@ -1,4 +1,4 @@
-package com.ishland.packumulator.common.s2c.sync;
+package com.ishland.batchify.common.s2c.sync;
 
 import io.netty.channel.ChannelDuplexHandler;
 import io.netty.channel.ChannelHandlerContext;

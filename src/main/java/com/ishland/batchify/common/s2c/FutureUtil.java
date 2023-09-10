@@ -1,4 +1,4 @@
-package com.ishland.packumulator.common.s2c;
+package com.ishland.batchify.common.s2c;
 
 import io.netty.channel.ChannelPromise;
 

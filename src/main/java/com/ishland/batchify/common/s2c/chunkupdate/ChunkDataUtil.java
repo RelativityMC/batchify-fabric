@@ -1,4 +1,4 @@
-package com.ishland.packumulator.common.s2c.chunkupdate;
+package com.ishland.batchify.common.s2c.chunkupdate;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufAllocator;
